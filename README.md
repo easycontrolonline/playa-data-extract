@@ -1,92 +1,78 @@
-<p align="center">
-  <a href="https://funkyton.com/payload-cms/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/hczpmiapo/image/upload/v1732576652/Static%20assets/Logos/payload_V3_mhv6wc.png">
-      <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/hczpmiapo/image/upload/v1732576652/Static%20assets/Logos/payload_V3_mhv6wc.png">
-      <img alt="Payload CMS logo" src="https://res.cloudinary.com/hczpmiapo/image/upload/v1732576652/Static%20assets/Logos/payload_V3_mhv6wc.png" width=100>
-    </picture>
-  </a>
-  <a href="https://railway.app/template/L8TUlT?referralCode=-Yg50p">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://railway.app/brand/logo-light.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://railway.app/brand/logo-dark.svg">
-      <img alt="Railway logo" src="https://railway.app/brand/logo-light.svg" width=100>
-    </picture>
-  </a>
-</p>
-
-<h2 align="center">
-  Playa Data Extract<br>
-  Ferramenta para extração de dados
-</h2>
-
-<h1 align="center">
-  Need help?<br>
-  <a href="https://funkyton.com/payload-cms/">Step by step guide and instructions</a>
-</h1>
+# Playa Data Extract
 
 <p align="center">
-  Uma ferramenta poderosa e flexível para extração de dados construída com Payload CMS V3 e PostgreSQL.
+  <img src="https://res.cloudinary.com/hczpmiapo/image/upload/v1732576652/Static%20assets/Logos/payload_V3_mhv6wc.png" alt="Payload CMS Logo" width="50" />
+  <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" alt="AWS Logo" width="50" style="margin-left: 20px" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/payloadcms/payload/blob/main/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-  <a href="https://discord.gg/payload">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-</p>
+## Sobre o Projeto
 
-## About this boilerplate
+O Playa Data Extract é um sistema robusto para converter imagens de documentos escaneados em dados estruturados utilizando modelos de Inteligência Artificial. O sistema suporta processamento em massa de forma assíncrona, armazenamento dos arquivos no AWS S3 e exportação dos dados extraídos em formatos XML e Excel.
 
-This boilerplate is a pre-configured, ready-to-deploy solution for Payload CMS as a website builder. It includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website. This template is optimized for seamless deployment on [Railway](https://railway.app?referralCode=-Yg50p), and uses PostgreSQL for both local development and production environments.
+## Funcionalidades Principais
 
-## Preconfigured Features & Integrations
+- **Extração de Dados:** Conversão de imagens (.jpg) em dados estruturados utilizando modelos de IA
+- **Gerenciamento de Schemas:** Cadastro e configuração de múltiplos schemas JSON para diferentes tipos de documentos
+- **Processamento Assíncrono:** Conversão em massa com filas de processamento
+- **Armazenamento na Nuvem:** Integração com AWS S3 para armazenamento de arquivos
+- **Exportação Flexível:** Exportação dos dados em formatos XML e Excel
+- **Monitoramento:** Logs detalhados e monitoramento contínuo dos processos
 
-- **Authentication**: Robust user authentication system
-- **Access Control**: Role-based access control for admins and users
-- **Premium Content**: Gated content for authenticated users
-- **Comments**: User commenting system with admin approval
-- **Layout Builder**: Flexible content creation with pre-configured blocks
-- **Draft Preview**: Preview unpublished content before going live
-- **SEO**: Built-in SEO optimization tools
-- **Redirects**: Easy management of URL redirects
-- **PostgreSQL Support**: Configured for both local and production use
+## Tecnologias Utilizadas
 
-### Railway Setup
+- **Frontend:** PayloadCMS (Admin UI) + React/Next.js
+- **Backend:** Node.js + Payload CMS
+- **Banco de Dados:** PostgreSQL com suporte a JSONB
+- **Cloud Services:** AWS S3, AWS Lambda, AWS SQS
+- **Processamento:** APIs de IA para extração de dados de documentos
 
-Use one-click deploy template:
+## Arquitetura do Sistema
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/L8TUlT?referralCode=-Yg50p)
+O sistema é estruturado em camadas para facilitar a manutenção e escalabilidade:
 
-### Local Setup
+1. **Frontend:** Interface web para interação dos usuários
+2. **Backend:** APIs e serviços para processamento e orquestração
+3. **Armazenamento:** AWS S3 para arquivos e PostgreSQL para dados estruturados
+4. **Processamento Assíncrono:** Sistema de filas para gerenciar conversões em massa
 
-1. Clone proejct: (recommeded) Laucnh on Railway and ejct [watch how](https://www.youtube.com/watch?v=LJFek8JP8TE). Alternatively clone this repo or fork it.
-2. Copy `.env.example` to `.env` (fill in your own values..)
-3. Install dependencies: `pnpm install` or `npm install`
-4. Run development mode: `pnpm dev` or `npm run dev`
-or
-5. Build the project: `pnpm build` or `npm run build`
-6. Start the server: `pnpm start` or `npm run start`
+## Fluxo de Processamento
 
+1. **Cadastro do Schema:** Criação de schemas JSON definindo a estrutura dos dados a serem extraídos
+2. **Upload de Documentos:** Seleção do schema e upload de imagens para processamento
+3. **Processamento na Nuvem:** Envio para serviços de IA via AWS Lambda
+4. **Armazenamento de Resultados:** Salvamento dos dados extraídos no banco de dados
+5. **Exportação:** Geração de arquivos XML e Excel com os dados estruturados
 
-### Requirements
+## Configuração Local
 
-- **Database**: PostgreSQL
-- **Node.js**: Compatible version as specified in `package.json`
+1. Clone o repositório: `git clone https://github.com/easycontrolonline/playa-data-extract.git`
+2. Configure o arquivo `.env` conforme o exemplo em `.env.example`
+3. Instale as dependências: `pnpm install` ou `npm install`
+4. Inicie o servidor de desenvolvimento: `pnpm dev` ou `npm run dev`
+5. Acesse o admin em: `http://localhost:3000/admin`
 
-## Useful Resources
+## Requisitos
 
-- **Blog post about this template**: [Read here](https://funkyton.com/payload-cms/)
-- **Official Payload Documentation**: [Read here](https://payloadcms.com/docs)
+- Node.js v18+ 
+- PostgreSQL 13+
+- Conta AWS (para S3, Lambda e SQS)
+- API Key para o serviço de IA utilizado
 
-<p align="center">
-  <a href="https://funkyton.com/">
-    A template by,
-    <br><br>
-    <picture>
-      <img alt="FUNKYTON logo" src="https://res-5.cloudinary.com/hczpmiapo/image/upload/q_auto/v1/ghost-blog-images/funkyton-logo.png" width=200>
-    </picture>
-  </a>
-</p>
+## Escopo do Desenvolvimento
+
+### Sprint 1 (MVP)
+- Frontend web com autenticação e registro
+- Cadastro de schemas
+- Upload assíncrono para o AWS S3
+- Processamento via fila
+- Exportação em XML e Excel
+- Relatórios básicos de processamento
+
+## Licença
+
+Este projeto está licenciado sob os termos da licença MIT.
+
+---
+
+<p align="center">Desenvolvido por Easycontrol</p>
+
