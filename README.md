@@ -16,8 +16,8 @@
 </p>
 
 <h2 align="center">
-  Payload CMS V3 Website Template<br>
-  <a href="https://railway.app/template/L8TUlT?referralCode=-Yg50p">One-click deploy on Railway!</a>
+  Playa Data Extract<br>
+  Ferramenta para extração de dados
 </h2>
 
 <h1 align="center">
@@ -26,7 +26,7 @@
 </h1>
 
 <p align="center">
-  A powerful, flexible, and production-ready Payload CMS V3 website builder with PostgreSQL database.
+  Uma ferramenta poderosa e flexível para extração de dados construída com Payload CMS V3 e PostgreSQL.
 </p>
 
 <p align="center">
