@@ -1,7 +1,7 @@
 {
-  "name": "payload-3-boilerplate",
+  "name": "playa-data-extract",
   "version": "1.0.0",
-  "description": "Payload V3 Website builder boilerplate for Railway",
+  "description": "Playa Data Extract - Ferramenta para extração de dados",
   "license": "MIT",
   "type": "module",
   "scripts": {
